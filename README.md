@@ -3,25 +3,18 @@
 basic bolierplate for vite vue3 <br>
 프로젝트 초기 세팅용 보일러플레이트
 
-### History
-
----
-
+## History
 -   2023.05.23 init
     -   vite vue3 프로젝트 생성
     -   router, axios, sass 설치
     -   tsconfig 설정
 
-### 환경
-
----
+## 환경
 
 -   window10
 -   node 18.16.0
 
-### Stack
-
----
+## Feature
 
 -   vite vue3
 -   typescript
@@ -29,16 +22,14 @@ basic bolierplate for vite vue3 <br>
 -   router@4
 -   axios
 
-### 실행
-
----
+## 실행
 
 ```
 $ npm install
 $ npm run dev
 ```
 
-### directory
+## directory
 
 ```
 .
@@ -62,7 +53,6 @@ $ npm run dev
 
 ### note
 
----
 
 -   기본 router, 404 및 layout 설정
 -   reset css 설정.
