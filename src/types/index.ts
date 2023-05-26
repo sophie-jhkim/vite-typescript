@@ -5,3 +5,8 @@ export interface UserInfo {
     email: string;
     birthday: string;
 }
+
+export interface ToDo {
+    text: string;
+    complete: boolean;
+}

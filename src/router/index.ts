@@ -13,39 +13,39 @@ const routes = [
                 component: () => import("../views/Index.vue"),
                 meta: { requireLogin: false },
             },
-        ],
-    },
-    // menu1
-    {
-        path: "/menu1",
-        name: "menu1",
-        component: BaseLayout,
-        children: [
+            // menu1
             {
-                path: "",
-                name: "menu1Main",
-                component: () => import("../views/Menu1.vue"),
-                meta: { requireLogin: false },
+                path: "/menu1",
+                name: "menu1",
+                /*omponent: BaseLayout,*/
+                children: [
+                    {
+                        path: "",
+                        name: "menu1Main",
+                        component: () => import("../views/Menu1.vue"),
+                        meta: { requireLogin: false },
+                    },
+                    {
+                        path: ":mo",
+                        name: "menu1Detail",
+                        component: () => import("../views/Menu1Detail.vue"),
+                        meta: { requireLogin: false },
+                    },
+                ],
             },
+            // menu2
             {
-                path: ":mo",
-                name: "menu1Detail",
-                component: () => import("../views/Menu1Detail.vue"),
-                meta: { requireLogin: false },
-            },
-        ],
-    },
-    // menu2
-    {
-        path: "/menu2",
-        name: "menu2",
-        component: BaseLayout,
-        children: [
-            {
-                path: "",
-                name: "menu2Main",
-                component: () => import("../views/Menu2.vue"),
-                meta: { requireLogin: false },
+                path: "/menu2",
+                name: "menu2",
+                /*component: BaseLayout,*/
+                children: [
+                    {
+                        path: "",
+                        name: "menu2Main",
+                        component: () => import("../views/Menu2.vue"),
+                        meta: { requireLogin: false },
+                    },
+                ],
             },
         ],
     },

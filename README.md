@@ -21,6 +21,8 @@ basic bolierplate for vite vue3 <br>
 -   scss
 -   router@4
 -   axios
+-   pinia
+-   vueuse
 
 ## 실행
 
