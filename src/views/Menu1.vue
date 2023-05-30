@@ -1,8 +1,9 @@
 <script setup lang="ts">
-import { onClickOutside } from "@vueuse/core";
 import { ToDo } from "../types";
-import { ref, reactive } from "vue";
+import { ref, reactive, onMounted } from "vue";
 import { useTodoStore } from "../stores/index"
+import TodoItem from "../components/TodoItem.vue";
+import { storeToRefs } from "pinia";
 const todoStore = useTodoStore()
 
 // init todos
@@ -20,29 +21,52 @@ if(!todoStore.todos.length){
 }
 */
 
-// const editable = ref(false);
 let text = reactive(null);
 const todoItem = ref(null);
 const todoRef = ref(null);
 
-onClickOutside(todoItem, () => {
-    console.log("click outside");
-    // if (editable.value) {
-    //     editable.value = false;
-    // }
-});
-const addTodo = () => {
+
+// watch(()=>todoStore.todos,
+//     (todos)=>{
+//     console.log(todos);
+// }) 
+
+const addTodo = async () => {
     if (!text) {
         alert("할일을 입력하세요!");
         todoRef.value.focus();
         return;
     }
-    todoStore.addTodo({ text: text, complete: false })
+    // todoStore.addTodo(text )
+    await todoStore.addTodo({ text: text, complete: false })
     text = "";
 };
-const onTextChange = (e: { target: { value: string } }, index: number) => {
-    console.log(e, index);
-};
+// const onTextChange = (e: { target: { value: string } }, index: number) => {
+//     console.log(e, index);
+// };
+
+const onUpdateTodo= async (text:string, index: number)=>{
+    let todos = [...todoStore.todos]
+    todos[index] = {...todos[index], text}
+    await todoStore.updateTodo(todos[index], index);
+}   
+
+const onCheckClick = async (complete: boolean,  index: number) => {
+    let todos = [...todoStore.todos]
+    todos[index] = {...todos[index], complete}
+    await todoStore.updateTodo(todos[index], index)
+}
+
+const onDeleteTodo = async (index: number) => {
+    // let todos = [...todoStore.todos]
+    // todos.filter(item => item != todos[index])
+    await todoStore.deleteTodo(index)
+
+}
+
+const handleChangeStatus = ()=>{
+
+}
 </script>
 <template>
     <div>
@@ -60,22 +84,14 @@ const onTextChange = (e: { target: { value: string } }, index: number) => {
                 ref="todoRef"
                 v-model="text"
                 placeholder="할 일을 입력해주세요"
+                @change=""
             />
             <button type="submit">Submit</button>
         </form>
     </div>
     <div>
         <ul>
-            <li ref="todoItem" v-for="(todo, index) in todoStore.todos">
-                <span>
-                    <!-- <span v-if="!editable" @click="editable = !editable"> -->
-                    {{ todo.text }}
-                </span>
-                <!-- <input
-                    type="text"
-                    :value="todo.text"
-                /> -->
-            </li>
+            <TodoItem v-for="(todo, index) in todoStore.todos" :todo="todo" :key="index" @update-todo="onUpdateTodo($event, index)" @delete-todo="onDeleteTodo(index)" @check-click="onCheckClick($event, index)"/>
         </ul>
     </div>
 </template>
