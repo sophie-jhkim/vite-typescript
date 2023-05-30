@@ -1,7 +1,7 @@
 
 <script lang="ts" setup>
 import { onClickOutside } from "@vueuse/core";
-import { ToDo } from "../types";
+import { ToDo } from "../service/types";
 import {ref, watch} from "vue"
 interface Props {
     todo: ToDo,

@@ -1,6 +1,6 @@
 import { ref, reactive } from "vue";
 import { acceptHMRUpdate , defineStore } from "pinia";
-import { ToDo } from "../types";
+import { ToDo } from "../service/types";
 
 export const useLoadingStore = defineStore("loadingStore", ()=>{
     const isLoading = ref(false);
