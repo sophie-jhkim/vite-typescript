@@ -47,6 +47,20 @@ const routes = [
                     },
                 ],
             },
+            // notion
+            {
+                path: "/notion",
+                name: "notion",
+                /*component: BaseLayout,*/
+                children: [
+                    {
+                        path: "",
+                        name: "notionMain",
+                        component: () => import("../views/Notion.vue"),
+                        meta: { requireLogin: false },
+                    },
+                ],
+            },
         ],
     },
     {

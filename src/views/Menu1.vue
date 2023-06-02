@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ToDo } from "../types";
+import { ToDo } from "../service/types";
 import { ref, reactive, onMounted } from "vue";
 import { useTodoStore } from "../stores/index"
 import TodoItem from "../components/TodoItem.vue";
