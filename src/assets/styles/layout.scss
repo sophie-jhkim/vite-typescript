@@ -1,3 +1,4 @@
+/*
 header {
     display: flex;
     height: 50px;
@@ -36,9 +37,18 @@ header {
         }
     }
 }
-
+*/
+#layout{
+    display: flex;
+}
+nav{
+    width: 240px;
+    height: 100vh;
+    border-right:1px solid #eee;
+}
 main {
-    min-height: 90vh;
+    flex-grow: 1;
+    max-width: calc(100vw - 240px);
 }
 
 footer {
