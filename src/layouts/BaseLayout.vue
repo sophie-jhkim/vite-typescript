@@ -1,14 +1,16 @@
 <script lang="ts" setup>
 import { RouterView } from "vue-router";
-import Header from "./Header.vue";
+import Nav from "./Nav.vue";
 import Footer from "./Footer.vue";
 </script>
 
 <template>
-    <Header />
-    <main>
-        <RouterView />
-    </main>
+    <div id="layout">
+        <Nav />
+        <main>
+            <RouterView />
+        </main>
+    </div>
     <Footer />
 </template>
 
