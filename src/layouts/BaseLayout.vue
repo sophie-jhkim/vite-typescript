@@ -10,8 +10,8 @@ import Footer from "./Footer.vue";
         <main>
             <RouterView />
         </main>
+        <Footer />
     </div>
-    <Footer />
 </template>
 
 <style lang="scss" scoped></style>
