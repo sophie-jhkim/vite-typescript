@@ -8,6 +8,8 @@ basic bolierplate for vite vue3 <br>
     -   vite vue3 프로젝트 생성
     -   router, axios, sass 설치
     -   tsconfig 설정
+-   2024.01.05 
+    -   기술블로그용 소스 정리
 
 ## 환경
 
@@ -50,12 +52,21 @@ $ npm run dev
 │   ├── router
 │   ├── types
 │   ├── views
+│   │   ├── errors
+│   │   │   └── 404
+│   │   ├── Gnb
+│   │   │   ├── Gnb1Index
+│   │   │   ├── Gnb1Sub1Detail
+│   │   │   ├── Gnb1Sub1Index
+│   │   │   ├── Gnb1Sub2Detail
+│   │   │   ├── Gnb1Sub2Index
+│   │   │   ├── Gnb2Sub1Detail
+│   │   │   └── Gnb2Sub1Index
+│   │   ├── Index.vue
 
 ```
 
 ### note
-
-
 -   기본 router, 404 및 layout 설정
 -   reset css 설정.
     -   font 한글 및 영어는 Noto Sans KR, 숫자는 Roboto
