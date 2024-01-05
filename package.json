@@ -20,7 +20,7 @@
     "vue3-notion": "^0.1.45"
   },
   "devDependencies": {
-    "@types/node": "^20.2.5",
+    "@types/node": "^20.10.6",
     "@vitejs/plugin-vue": "^4.1.0",
     "material-design-icons-iconfont": "^6.7.0",
     "sass": "^1.62.1",
