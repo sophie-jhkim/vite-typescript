@@ -4,22 +4,10 @@ import { useRouter, useRoute } from "vue-router"
 const router = useRouter();
 const route = useRoute();
 const tabMenu=[
-    {
-        name : "전체",
-        type: 'all',
-    },
-    {
-        name : "사과",
-        type: 'apple',
-    },
-    {
-        name : "바나나",
-        type: 'banana',
-    },
-    {
-        name : "오렌지",
-        type: 'orange',
-    },
+    { name : "전체",  type: 'all',},
+    { name : "사과",  type: 'apple',},
+    { name : "바나나",type: 'banana',},
+    { name : "오렌지",type: 'orange',},
 ]
 
 const currTab:string = '';
