@@ -117,7 +117,7 @@ const routes = [
                         meta: { requireLogin: false },
                     },
                     {
-                        path: ":mo",
+                        path: ":no",
                         name: "menu1Detail",
                         component: () => import("../views/Menu1Detail.vue"),
                         meta: { requireLogin: false },
