@@ -53,6 +53,24 @@ export const useTodoStore = defineStore("useTodoStore", ()=>{
     } as const;
 })
 
+export const useKeywordStore = defineStore('useKeywordStore', ()=>{
+
+    let keywordHistory: string = reactive(null);
+
+    if(localStorage.getItem('keyword-history')){
+        keywordHistory = localStorage.getItem('keyword-history')
+    }
+    
+    const setKeywordHistory = async (arr: string) => {
+        localStorage.setItem('keyword-history', arr)
+
+        keywordHistory = arr;
+    }
+    return{
+        keywordHistory,
+        setKeywordHistory
+    } as const;
+})
 
 
 
